@@ -1,10 +1,12 @@
 ﻿using System;
 using tabuleiro;
 
+
 namespace xadrez
 {
     class PartidaDeXadrez
     {
+
         public Tabuleiro tab { get; private set; }
         private int turno;
         private Cor jogadorAtual;
@@ -17,15 +19,14 @@ namespace xadrez
             jogadorAtual = Cor.Branca;
             terminada = false;
             colocarPecas();
-        } 
+        }
 
-        public void ExecutaMovimento(Posicao origem, Posicao destino)
+        public void executaMovimento(Posicao origem, Posicao destino)
         {
             Peca p = tab.retirarPeca(origem);
             p.incrementarQteMovimentos();
             Peca pecaCapturada = tab.retirarPeca(destino);
             tab.colocarPeca(p, destino);
-
         }
 
         private void colocarPecas()
@@ -44,6 +45,5 @@ namespace xadrez
             tab.colocarPeca(new Torre(tab, Cor.Preta), new PosicaoXadrez('e', 8).toPosicao());
             tab.colocarPeca(new Rei(tab, Cor.Preta), new PosicaoXadrez('d', 8).toPosicao());
         }
-
     }
 }
