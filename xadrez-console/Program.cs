@@ -4,23 +4,29 @@ using xadrez;
 
 namespace xadrez_console
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
             try
             {
-                Tabuleiro tab = new Tabuleiro(8, 8);
+                PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
-                tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(2, 4));
+                while(!partida.terminada)
+                {
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab);
 
-                tab.colocarPeca(new Rei(tab, Cor.Branca), new Posicao(6, 2));
-                tab.colocarPeca(new Torre(tab, Cor.Branca), new Posicao(5, 4));
-                tab.colocarPeca(new Torre(tab, Cor.Branca), new Posicao(4, 4));
+                    Console.WriteLine();
+                    Console.Write("Digite a posicao de origem: ");
+                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+                    Console.Write("Digite a posicao de destino: ");
+                    Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
-                Tela.imprimirTabuleiro(tab);
+                    partida.ExecutaMovimento(origem, destino);
+
+                }
+
             }
             catch (TabuleiroException e)
             {
