@@ -83,7 +83,7 @@ namespace xadrez
 
         public HashSet<Peca> pecasCapturadas(Cor cor)
         {
-            HashSet<Peca> aux= new HashSet<Peca>();
+            HashSet<Peca> aux = new HashSet<Peca>();
             foreach(Peca x in capturadas)
             {
                 if(x.cor == cor)
