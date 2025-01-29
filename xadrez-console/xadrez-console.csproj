@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -51,7 +51,11 @@
     <Compile Include="tabuleiro\Tabuleiro.cs" />
     <Compile Include="tabuleiro\TabuleiroException.cs" />
     <Compile Include="Tela.cs" />
+    <Compile Include="xadrez\Bispo.cs" />
+    <Compile Include="xadrez\Cavalo.cs" />
+    <Compile Include="xadrez\Dama.cs" />
     <Compile Include="xadrez\PartidaDeXadrez.cs" />
+    <Compile Include="xadrez\Peao.cs" />
     <Compile Include="xadrez\PosicaoXadrez.cs" />
     <Compile Include="xadrez\Rei.cs" />
     <Compile Include="xadrez\Torre.cs" />
